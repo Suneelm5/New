@@ -35,3 +35,9 @@ If you want, the next iteration can turn this README into:
 - a product requirements document,
 - a landing page,
 - or a starter app for multi-platform live streaming.
+
+
+## Business planning doc
+- See `GPT_PLAN_AND_EARNING_SYSTEM.md` for a ready-to-use GPT launch plan and earning system.
+
+- Includes team earning system + manager dashboard sections for operations scaling.
