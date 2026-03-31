@@ -1,37 +1,54 @@
-# New
+# AI Payment Gateway (Google Pay + Paytm) Starter
 
-## Features
+This project is a runnable starter API for a payment gateway that:
+- accepts **Google Pay** and **Paytm**,
+- applies AI-style fraud scoring before authorization,
+- generates customer AI insights (churn risk, upsell score, next best action),
+- queues merchant earnings payout requests to wallet addresses (including Opera wallet-compatible EVM addresses).
 
-This project is scoped around a simple goal: **take your agent live on Facebook, Instagram, and YouTube**.
+## Run locally
 
-### Core idea
-- Connect one agent experience to multiple social platforms.
-- Publish live sessions to Facebook Live, Instagram Live, and YouTube Live.
-- Reuse one content flow across all channels instead of managing each platform separately.
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
 
-### Suggested product features
-- **Multi-platform live streaming** so one agent broadcast can reach all three platforms.
-- **Platform-specific stream setup** for titles, descriptions, tags, and thumbnails.
-- **Unified chat inbox** to collect comments and questions from Facebook, Instagram, and YouTube in one place.
-- **Agent reply orchestration** so the agent can answer, moderate, or hand off to a human operator.
-- **Scheduling support** for planned live sessions and repeat broadcasts.
-- **Analytics dashboard** for viewers, engagement, and retention by platform.
-- **Safety controls** such as approval queues, blocked words, and emergency pause.
+## Launch with Docker (quick project launch)
 
-### Important platform note
-Instagram live integrations can be more restricted than Facebook Live and YouTube Live. In practice, this usually means the project should support:
-- direct integrations where platform APIs allow them, and
-- fallback workflows through approved streaming tools or human-assisted publishing where direct API support is limited.
+```bash
+docker compose up --build
+```
 
-### Recommended first milestone
-1. Go live on **YouTube**.
-2. Add **Facebook Live** publishing.
-3. Add **Instagram-compatible** workflow support.
-4. Merge comments into one operator view.
-5. Add automated agent moderation and responses.
+API docs: `http://127.0.0.1:8000/docs`
 
-## Next step
-If you want, the next iteration can turn this README into:
-- a product requirements document,
-- a landing page,
-- or a starter app for multi-platform live streaming.
+## Endpoints
+- `GET /health`
+- `GET /v1/payment-methods`
+- `POST /v1/payment_intents`
+- `POST /v1/ai/customer-insights`
+- `POST /v1/payouts/wallet`
+
+## Wallet payout example
+
+```json
+{
+  "merchant_id": "m_001",
+  "amount": 1250.75,
+  "currency": "USD",
+  "wallet_address": "0x1234567890abcdef1234567890abcdef12345678",
+  "network": "OP"
+}
+```
+
+## Important limitation
+I can prepare the project and payout flow, but I cannot personally launch your live business accounts, sign in to Google AI Studio, or transfer real money to your wallet from here.
+
+To use Google AI Studio yourself:
+1. Open https://aistudio.google.com/
+2. Sign in with your Google account
+3. Create an API key
+4. Integrate the key in your backend AI services
+
+See full plan in [`docs/AI_PAYMENT_GATEWAY_SYSTEM.md`](docs/AI_PAYMENT_GATEWAY_SYSTEM.md).
