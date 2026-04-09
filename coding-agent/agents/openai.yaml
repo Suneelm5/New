@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coding Agent"
+  short_description: "Ship repository changes with planning and validation"
+  default_prompt: "Use $coding-agent to inspect the repository, implement the requested change, run relevant checks, and summarize the results clearly."
