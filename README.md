@@ -35,3 +35,29 @@ If you want, the next iteration can turn this README into:
 - a product requirements document,
 - a landing page,
 - or a starter app for multi-platform live streaming.
+
+## Razorpay integration (backend)
+
+A starter Razorpay backend is available in `backend/index.js`.
+
+### Setup
+1. Install dependencies:
+   ```bash
+   cd backend
+   npm install
+   ```
+2. Copy env file:
+   ```bash
+   cp .env.example .env
+   ```
+3. Add your Razorpay credentials in `.env`.
+4. Start server:
+   ```bash
+   npm run dev
+   ```
+
+### API endpoints
+- `GET /health`
+- `GET /api/payment/config`
+- `POST /api/payment/create-order`
+- `POST /api/payment/verify`
