@@ -142,12 +142,13 @@ If you want to run this through **Google AI Studio**:
 
 ### Personal payment gateways
 Set these as your default collection methods:
-- **Google Pay** (UPI ID + QR)
-- **PhonePe** (UPI ID + QR)
-- **Paytm** (UPI ID + QR)
+- **Primary UPI ID for earnings:** `fino.7307973257@finobank`
+- **Google Pay:** connect this UPI ID and generate/share a QR code
+- **PhonePe:** connect this UPI ID and generate/share a QR code
+- **Paytm:** connect this UPI ID and generate/share a QR code
 
 Checklist:
-1. Create a dedicated business UPI ID.
+1. Use `fino.7307973257@finobank` as the dedicated business UPI ID for earnings.
 2. Generate and save branded QR codes for all three apps.
 3. Add payment links/QR to proposals, invoices, and WhatsApp templates.
 4. Reconcile payments daily in a simple ledger (date, client, amount, method, status).
@@ -231,6 +232,7 @@ Use one dashboard (Airtable/Notion/Sheets/Looker Studio) with these tabs:
 - MRR
 - Cash collected (weekly/monthly)
 - Outstanding invoices
+- UPI collections received at `fino.7307973257@finobank`
 - Average revenue per client
 - Churn and expansion revenue
 
